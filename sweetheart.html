@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sian 的 Sweet Heart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 0;
+        background-image: url("background.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: #b7e6e6;
+        font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #000;
+        line-height: 1.5;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 1em;
+      }
+      h1 {
+        text-align: center;
+      }
+      .logo {
+        display: block;
+        margin: 0 auto 1em auto;
+        width: 120px;
+        border-radius: 50%;
+      }
+      .entry {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1em;
+        margin-bottom: 1em;
+        border-radius: 10px;
+      }
+      .entry h2 {
+        margin-top: 0;
+      }
+      .entry .date {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="logo.png" alt="Sian Logo" class="logo">
+    <h1>我與他の Sweet Heart 記錄</h1>
+    <div id="sweetheart-container"></div>
+
+    <script>
+      fetch("sweetheart.json")
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById("sweetheart-container");
+          data.forEach(entry => {
+            const div = document.createElement("div");
+            div.className = "entry";
+            div.innerHTML = `
+              <h2>${entry.title}</h2>
+              <div class="date">${entry.date}</div>
+              <p>${entry.content}</p>
+            `;
+            container.appendChild(div);
+          });
+        })
+        .catch(error => {
+          document.getElementById("sweetheart-container").innerHTML = "<p>讀取資料失敗。</p>";
+        });
+    </script>
+  </body>
+</html>
