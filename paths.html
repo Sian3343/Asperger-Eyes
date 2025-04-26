@@ -1,7 +1,123 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>秘密花園</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Dancing Script', cursive;
+      color: #555;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      animation: bodyFadeIn 2s ease;
+    }
+
+    .intro {
+      margin-top: 20vh;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 20px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+
+    section {
+      margin: 50px 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 2s ease-in;
+    }
+
+    a {
+      color: #888;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .petal {
+      position: fixed;
+      top: -10px;
+      color: pink;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+  </style>
 </head>
-  <body>
-  </body>
+
+<body>
+
+  <div class="intro">
+    <h1>秘密花園</h1>
+    <p>這裡，是我靜靜灌潤心靈的角落。<br>
+    如果你聽見微風裡的心跳聲，那，就是我的聲音。</p>
+  </div>
+
+  <section>
+    <h2>心底話 Whisper</h2>
+    <p><a href="paths.html">走進心底的小徑 ➤</a></p>
+  </section>
+
+  <section>
+    <h2>English Version</h2>
+    <p><a href="secretgarden-en.html">Enter Secret Garden ➤</a></p>
+  </section>
+
+<!-- 花瓣飄落 -->
+<script>
+  const numberOfPetals = 20;
+  for (let i = 0; i < numberOfPetals; i++) {
+    let petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+    petal.style.opacity = Math.random();
+    petal.style.fontSize = (10 + Math.random() * 20) + 'px';
+    document.body.appendChild(petal);
+  }
+</script>
+
+</body>
 </html>
