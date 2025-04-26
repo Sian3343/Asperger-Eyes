@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Paths</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Dancing Script', cursive;
+      color: #555;
+      margin: 0;
+      padding: 20px;
+      animation: bodyFadeIn 2s ease;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 3em;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease-in;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.6em;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Secret Paths</h1>
+
+  <div class="card">
+    <p><strong>Bloom</strong><br>
+    Even the tiniest bud waits patiently for its spring.<br>
+    I am learning to trust the timing of my own blooming.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>Silent Conversations</strong><br>
+    Between the moonlight and my sighs, there are conversations no one else hears.<br>
+    They are soft, but they carry my truest feelings.</p>
+  </div>
+
+  <div class="card">
+    <p><strong>Little Wishes</strong><br>
+    In the quiet folds of my heart, I hide wishes so small that even I sometimes forget.<br>
+    But they live, tender and bright, waiting to be embraced.</p>
+  </div>
+
+<!-- 花瓣飄落效果 -->
+<script>
+  const numberOfPetals = 20;
+
+  for (let i = 0; i < numberOfPetals; i++) {
+    let petal = document.createElement('div');
+    petal.className = 'petal';
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+    petal.style.opacity = Math.random();
+    petal.style.fontSize = (10 + Math.random() * 20) + 'px';
+    document.body.appendChild(petal);
+  }
+</script>
+
+<style>
+  .petal {
+    position: fixed;
+    top: -10px;
+    color: pink;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+</style>
+
+</body>
+</html>
