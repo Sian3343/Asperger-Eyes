@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Secret Paths</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -12,32 +13,33 @@
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Lora', serif;
       color: #555;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      text-align: center;
       animation: bodyFadeIn 2s ease;
     }
 
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     h1 {
-      text-align: center;
-      margin-top: 50px;
       font-size: 3em;
+      margin-top: 50px;
+      margin-bottom: 0.5em;
     }
 
-    .card {
+    .story-card {
       background: rgba(255, 255, 255, 0.7);
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px auto;
+      margin: 30px auto;
+      padding: 20px 30px;
+      border-radius: 20px;
       max-width: 800px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       animation: fadeIn 2s ease-in;
-    }
-
-    p {
-      font-size: 1.3em;
-      line-height: 1.6em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     @keyframes fadeIn {
@@ -45,9 +47,47 @@
       to { opacity: 1; }
     }
 
-    @keyframes bodyFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    h2 {
+      font-size: 2em;
+      color: #7b5e57;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    .home-link {
+      margin-top: 30px;
+      display: block;
+      font-size: 1.1em;
+      color: #777;
+      text-decoration: none;
+    }
+    .home-link:hover {
+      color: #333;
+    }
+
+    .scroll-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .scroll-buttons button {
+      background-color: #ccf2ff;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .scroll-buttons button:hover {
+      background-color: #99e6ff;
     }
   </style>
 </head>
@@ -56,55 +96,39 @@
 
   <h1>Secret Paths</h1>
 
-  <div class="card">
-    <p><strong>Bloom</strong><br>
-    Even the tiniest bud waits patiently for its spring.<br>
-    I am learning to trust the timing of my own blooming.</p>
+  <div class="story-card">
+    <h2>🌸 Whisper of the First Step</h2>
+    <p>Sometimes, the first step is not about going far, but about daring to lift your foot.  
+    Even if the destination is hidden in mist, a single brave step brings the heart closer to dreams.</p>
   </div>
 
-  <div class="card">
-    <p><strong>Silent Conversations</strong><br>
-    Between the moonlight and my sighs, there are conversations no one else hears.<br>
-    They are soft, but they carry my truest feelings.</p>
+  <div class="story-card">
+    <h2>🌿 Hidden Corners</h2>
+    <p>There are always hidden corners inside our hearts, unknown to others,  
+    quietly blooming with fragile but tenacious flowers.</p>
   </div>
 
-  <div class="card">
-    <p><strong>Little Wishes</strong><br>
-    In the quiet folds of my heart, I hide wishes so small that even I sometimes forget.<br>
-    But they live, tender and bright, waiting to be embraced.</p>
+  <div class="story-card">
+    <h2>🍃 A Leaf's Promise</h2>
+    <p>A single falling leaf once whispered to me:  
+    "Every ending carries the seed of a beginning."</p>
   </div>
 
-<!-- 花瓣飄落效果 -->
-<script>
-  const numberOfPetals = 20;
+  <div class="story-card">
+    <h2>🌼 Gentle Echoes</h2>
+    <p>Not every sound needs to be loud to be heard.  
+    Sometimes, the gentlest echo carries the truest part of ourselves.</p>
+  </div>
 
-  for (let i = 0; i < numberOfPetals; i++) {
-    let petal = document.createElement('div');
-    petal.className = 'petal';
-    petal.style.left = Math.random() * 100 + 'vw';
-    petal.style.animationDuration = (5 + Math.random() * 5) + 's';
-    petal.style.opacity = Math.random();
-    petal.style.fontSize = (10 + Math.random() * 20) + 'px';
-    document.body.appendChild(petal);
-  }
-</script>
+  <a href="secretgarden-en.html" class="home-link">← Back to Secret Garden</a>
 
-<style>
-  .petal {
-    position: fixed;
-    top: -10px;
-    color: pink;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-
-  @keyframes fall {
-    to {
-      transform: translateY(100vh) rotate(360deg);
-    }
-  }
-</style>
-
+  <!-- 上下按鈕 -->
+  <div class="scroll-buttons">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
+  </div>
+      <footer> © 2025 Sian. 本網站內所有文字內容均為原創，未經授權不得轉載。<br>
+All text content on this website is original and may not be reproduced without permission.
+      </footer>
 </body>
 </html>
