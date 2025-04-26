@@ -71,6 +71,27 @@
   max-width: 600px;
 }   
     </style>
+    <script>
+  fetch('sweetheart.json')
+    .then(response => response.json())
+    .then(data => {
+      // 根據日期由新至舊排序
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      const container = document.getElementById('entries');
+      data.forEach(entry => {
+        const div = document.createElement('div');
+        div.className = 'entry';
+        div.innerHTML = `
+          <h2>${entry.title}</h2>
+          <div class="date">${entry.date}</div>
+          <pre>${entry.content}</pre>
+        `;
+        container.appendChild(div);
+      });
+    });
+    </script>
+    
   </head>
 
   <body>
