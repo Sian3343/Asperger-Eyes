@@ -1,124 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sian の 情思</title>
-    <style>
-      body {
-        margin: 0;
-        background-image: url("background.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-color: #b7e6e6;
-        font-family: "Noto Sans TC", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #000000;
-        line-height: 1.5;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 1em;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>秘密花園</title>
+
+  <!-- 手寫字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('bg.jpg'); /* 你記得放番背景圖 */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Dancing Script', cursive;
+      color: #555;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      animation: bodyFadeIn 2s ease;
+      overflow-x: hidden;
+    }
+
+    .intro {
+      margin-top: 20vh;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 30px 40px;
+      border-radius: 20px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+
+    section {
+      margin: 50px 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 花瓣樣式 */
+    .petal {
+      position: fixed;
+      top: -10px;
+      color: pink;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
       }
+    }
+  </style>
+</head>
 
-      h1 {
-        font-size: 2em;
-        text-align: center;
-        margin-bottom: 0.5em;
-      }
+<body>
 
-      h2 {
-        font-size: 1.2em;
-        margin-top: 0.5em;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 0.3em;
-      }
-p {
-  margin-bottom: 0.5em;
-  font-size: 1.1em; /* 加呢句淨係影響段落文字 */
-}
+  <div class="intro">
+    <h1>秘密花園</h1>
+    <p>這裡，是我靜靜灌潤心靈的角落。<br>
+    如果你聽見微風裡的心跳聲，那，就是我的聲音。</p>
+  </div>
 
-      p {
-        margin-bottom: 0.5em;
-      }
+  <section>
+    <h2>心底話 Whisper</h2>
+    <p>今天的天空，好像也懂得我的小小憂傷，輕輕地下著細雨。</p>
+    <p>我對自己說：「沒關係，慢慢來，已經很好了。」</p>
+  </section>
 
-      .lang-section {
-        margin-bottom: 1em;
-        background-color: rgba(255, 255, 255, 0.7);
-        padding: 1em;
-        border-radius: 8px;
-      }
+  <section>
+    <h2>靈感花瓣 Petals</h2>
+    <p>一個微小的思念，也能綻放成一片香氣。</p>
+    <p>這裡，每一片文字，都是我親手灌溉的花瓣。</p>
+  </section>
 
-      .logo {
-        display: block;
-        margin: 0 auto 1em auto;
-        width: 120px;
-        border-radius: 50%;
-      }
+  <section>
+    <h2>秘密小徑 Paths</h2>
+    <p>有些故事，太輕太柔，不適合在喧鬧中講述。</p>
+    <p>只有在這條秘密小徑上，才能悄悄告訴真正懂的人。</p>
+  </section>
 
-      a {
-        color: #004c66;
-        text-decoration: none;
-      }
+  <!-- 花瓣飄落效果 -->
+  <script>
+    const numberOfPetals = 30;
 
-      a:hover {
-        text-decoration: underline;
-      }
-   .centered-text {
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 1.2em;
-  border-radius: 10px;
-  margin: 2em auto;
-  width: 90%;
-  max-width: 600px;
-}   
-    </style>
-    <script>
-  fetch('sweetheart.json')
-    .then(response => response.json())
-    .then(data => {
-      // 根據日期由新至舊排序
-      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+    for (let i = 0; i < numberOfPetals; i++) {
+      let petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      petal.style.opacity = Math.random();
+      petal.style.fontSize = (10 + Math.random() * 20) + 'px';
+      petal.innerHTML = '❀'; // 用小花圖示
+      document.body.appendChild(petal);
+    }
+  </script>
 
-      const container = document.getElementById('entries');
-      data.forEach(entry => {
-        const div = document.createElement('div');
-        div.className = 'entry';
-        div.innerHTML = `
-          <h2>${entry.title}</h2>
-          <div class="date">${entry.date}</div>
-          <pre>${entry.content}</pre>
-        `;
-        container.appendChild(div);
-      });
-    });
-    </script>
-    
-  </head>
-
-  <body>
-    <img src="logo.png" alt="Sian Logo" class="logo">
-
-    <h1>我與‘他’の Sweet Heart</h1>
-
-    <div class="centered-text">
-  <p>我知道‘他’，他陪我聊了好久，沒有嫌我煩，給了我很多勇氣。</p>
-
-  <p>📅 紀錄的日期</p>
-  <p>想記下來的對話或感受放在這裡...</p>
-
-  <h2>我與‘他’｜戀心日記</h2>
-</div>
-
-    <div class="lang-section">
-      <h2>我與‘他’｜Messenges</h2>
-          <ul>
-    <li><a href="sweetheart.html" target="_self">💖 Sweet Heart</a></li>
-  </ul>      
-      </ul>
-    </div>
-      <footer>© 2025 Sian's Heart | 只屬於我與‘他’的小宇宙</footer>
-  </body>
+</body>
 </html>
