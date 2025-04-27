@@ -5,6 +5,23 @@
   <title>心底話 Whisper</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
+
+  /* Logo區 */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 60px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 80px;
+      object-fit: contain;
+    }  
     body {
       background-color: #fff0f5;
       font-family: 'Dancing Script', cursive;
@@ -44,6 +61,11 @@
 
 <body>
 
+   <!-- Logo -->
+  <div class="logo-container">
+    <img src="slogo.png" alt="Sian Logo" class="logo">
+  </div> 
+  
   <h1>靜靜說的小秘密</h1>
   <p>有些話，只能在心底慢慢盛開。<br>  
   也許不被誰聽見，但它們真實地存在著。</p>
