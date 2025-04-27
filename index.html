@@ -111,11 +111,27 @@
 .floating-buttons a:hover {
   background: rgba(255, 105, 180, 0.8); /* 深一點的粉紅 */
 }
+
+    .logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.logo {
+  height: 80px; /* 可根據需要調整大小 */
+  object-fit: contain;
+}
     
   </style>
 </head>
 
 <body>
+<div class="logo-container">
+  <img src="slogo.png" alt="Sian Logo" class="logo">
+</div>
+  
 
   <div class="intro">
     <h1>Sian の秘密花園</h1>
