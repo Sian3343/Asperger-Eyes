@@ -33,6 +33,9 @@
     }
 
     h1 {
+    }
+
+    h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
     }
@@ -80,6 +83,35 @@
         transform: translateY(100vh) rotate(360deg);
       }
     }
+
+    .floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+
+.floating-buttons button,
+.floating-buttons a {
+  background: rgba(255, 192, 203, 0.7); /* 粉紅半透明 */
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #555;
+  text-align: center;
+}
+
+.floating-buttons button:hover,
+.floating-buttons a:hover {
+  background: rgba(255, 105, 180, 0.8); /* 深一點的粉紅 */
+}
+    
   </style>
 </head>
 
@@ -126,7 +158,22 @@
       petal.innerHTML = '❀'; // 用小花圖示
       document.body.appendChild(petal);
     }
-  </script>
 
+  
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+
+  </script>
+<div class="floating-buttons">
+  <button onclick="scrollToTop()">↑</button>
+  <button onclick="scrollToBottom()">↓</button>
+  <a href="../secretgarden.html">首頁</a>
+</div>
+  
 </body>
 </html>
