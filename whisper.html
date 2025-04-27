@@ -56,6 +56,38 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+
+/* 上下&首頁按鈕 */
+    .scroll-buttons {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+
+    .scroll-buttons button {
+      background: rgba(255, 192, 203, 0.7);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #555;
+    }
+
+    .scroll-buttons button:hover {
+      background: rgba(255, 105, 180, 0.8);
+    }
+
+    .home-button {
+      font-size: 12px; /* 專門縮小 🏠 按鈕字體 */
+    }    
+    
   </style>
 </head>
 
