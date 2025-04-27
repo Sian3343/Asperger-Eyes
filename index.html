@@ -2,15 +2,16 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sian の秘密花園</title>
 
   <!-- 手寫字體 -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
+    /* 整體設定 */
     body {
-      background-image: url('bg.jpg'); /* 你記得放番背景圖 */
+      background-image: url('bg.jpg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
@@ -23,16 +24,31 @@
       overflow-x: hidden;
     }
 
+    /* Logo區 */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 60px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 80px;
+      object-fit: contain;
+    }
+
+    /* 入口文字 */
     .intro {
-      margin-top: 20vh;
+      margin-top: 25vh;
       background: rgba(255, 255, 255, 0.7);
       display: inline-block;
       padding: 30px 40px;
       border-radius: 20px;
       animation: fadeIn 2s ease-in;
-    }
-
-    h1 {
     }
 
     h1 {
@@ -45,6 +61,7 @@
       line-height: 1.6em;
     }
 
+    /* 各區塊設定 */
     section {
       margin: 50px 20px;
       padding: 20px;
@@ -56,17 +73,7 @@
       animation: fadeIn 2s ease-in;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes bodyFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* 花瓣樣式 */
+    /* 飄落花瓣 */
     .petal {
       position: fixed;
       top: -10px;
@@ -84,92 +91,99 @@
       }
     }
 
-    .floating-buttons {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 999;
-}
+    /* 上下&首頁按鈕 */
+    .scroll-buttons {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
 
-.floating-buttons button,
-.floating-buttons a {
-  background: rgba(255, 192, 203, 0.7); /* 粉紅半透明 */
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #555;
-  text-align: center;
-}
+    .scroll-buttons button {
+      background: rgba(255, 192, 203, 0.7);
+      border: none;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #555;
+    }
 
-.floating-buttons button:hover,
-.floating-buttons a:hover {
-  background: rgba(255, 105, 180, 0.8); /* 深一點的粉紅 */
-}
+    .scroll-buttons button:hover {
+      background: rgba(255, 105, 180, 0.8);
+    }
 
-    .logo-container {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%); /* 把 logo 向左移動，使其居中 */
-  padding: 10px 45px;
-  background: rgba(255, 255, 255, 0.6); /* 透明白色背景 */
-  border-radius: 50px; /* 讓背景有橢圓形效果 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 增加柔和的陰影 */
-}
+    .home-button {
+      font-size: 12px; /* 專門縮小 HOME 按鈕字體 */
+    }
 
-.logo {
-  height: 80px; /* 調整大小 */
-  object-fit: contain; /* 讓圖片不失真 */
-}
+    /* 淡入動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-    
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 頁腳 */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+    }
   </style>
 </head>
 
 <body>
-<div class="logo-container">
-  <img src="slogo.png" alt="Sian Logo" class="logo">
-</div>
-  
 
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="slogo.png" alt="Sian Logo" class="logo">
+  </div>
+
+  <!-- 介紹文字 -->
   <div class="intro">
     <h1>Sian の秘密花園</h1>
     <p>這裡，是我靜靜灌潤心靈的角落。<br>
-    如果你聽見微風裡的心跳聲，那，就是我的聲音。</p>
+       如果你聽見微風裡的心跳聲，那，就是我的聲音。</p>
   </div>
-  
-<section>
+
+  <!-- 秘密小徑 -->
+  <section>
     <h2>秘密小徑 Paths</h2>
     <p>有些故事，太輕太柔，不適合在喧鬧中講述。</p>
     <p>只有在這條秘密小徑上，才能悄悄告訴真正懂的人。</p>
     <p><a href="paths.html">➤ 進入秘密小徑</a></p>
-</section>
+  </section>
 
+  <!-- 心底話 -->
   <section>
-  <h2>心底話 Whisper</h2>
-  <p>我有些話，不太敢大聲說出來。<br>
-    只會在這個小小花園，簡簡單單說給自己聽。</p>
-  <p><a href="whisper/index.html">➤ 進入心底話</a></p>
-</section>
+    <h2>心底話 Whisper</h2>
+    <p>我有些話，不太敢大聲說出來。<br>
+       只會在這個小小花園，簡簡單單說給自己聽。</p>
+    <p><a href="whisper/index.html">➤ 進入心底話</a></p>
+  </section>
 
-<section>
-  <h2>靈感花瓣 Petals</h2>
-  <p>有時，一個小小的思念，會潤成一瓣美麗的花瓣。<br>
-    在此給自己留下一片輕輕的香氣。</p>
-  <p><a href="petals/index.html">➤ 進入靈感花瓣</a></p>
-</section>
-
+  <!-- 靈感花瓣 -->
+  <section>
+    <h2>靈感花瓣 Petals</h2>
+    <p>有時，一個小小的思念，會潤成一瓣美麗的花瓣。<br>
+       在此給自己留下一片輕輕的香氣。</p>
+    <p><a href="petals/index.html">➤ 進入靈感花瓣</a></p>
+  </section>
 
   <!-- 花瓣飄落效果 -->
   <script>
     const numberOfPetals = 30;
-
     for (let i = 0; i < numberOfPetals; i++) {
       let petal = document.createElement('div');
       petal.className = 'petal';
@@ -177,55 +191,20 @@
       petal.style.animationDuration = (5 + Math.random() * 5) + 's';
       petal.style.opacity = Math.random();
       petal.style.fontSize = (10 + Math.random() * 20) + 'px';
-      petal.innerHTML = '❀'; // 用小花圖示
+      petal.innerHTML = '❀'; 
       document.body.appendChild(petal);
     }
-
-  
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-  }
-.scroll-buttons button {
-  margin: 5px;
-  padding: 8px 12px;
-  font-size: 10px; /* 正常按鈕字體 */
-  border: none;
-  border-radius: 8px;
-  background-color: #f8f8f8;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.scroll-buttons button:hover {
-  background-color: #e0e0e0;
-}
-
-.scroll-buttons {
-  position: fixed;
-  top: 50%;
-  right: 20px; /* 離右邊20px，可以調 */
-  transform: translateY(-50%); /* 讓它垂直置中 */
-  display: flex;
-  flex-direction: column; /* 按鈕垂直排 */
-  gap: 10px; /* 按鈕之間有距離 */
-  z-index: 999; /* 保證在最上層 */
-}
-    
-.home-button {
-  font-size: 12px; /* 專門縮小 HOME 按鈕的字體 */
-}
-
   </script>
-<div class="scroll-buttons">
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-  <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
-  <button onclick="location.href='index.html';" class="home-button">HOME</button>
-</div>
+
+  <!-- 上下 & 回首頁按鈕 -->
+  <div class="scroll-buttons">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
+    <button onclick="location.href='index.html';" class="home-button">HOME</button>
+  </div>
+
+  <!-- 頁腳 -->
+  <footer>© 2025 Sian's | 所有文章均屬原創，請勿轉載!</footer>
 
 </body>
-<footer>© 2025 Sian's | 所有文章均屬原創，請勿轉載!</footer>    
 </html>
