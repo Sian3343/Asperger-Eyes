@@ -189,13 +189,32 @@
   function scrollToBottom() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   }
+.scroll-buttons button {
+  margin: 5px;
+  padding: 8px 12px;
+  font-size: 16px; /* 正常按鈕字體 */
+  border: none;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.scroll-buttons button:hover {
+  background-color: #e0e0e0;
+}
+
+.home-button {
+  font-size: 12px; /* 專門縮小 HOME 按鈕的字體 */
+}
 
   </script>
-  <div class="floating-buttons">
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
-      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});"><a href="../index.html">HOME</a></button>
-  </div>
+<div class="scroll-buttons">
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
+  <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
+  <button onclick="location.href='index.html';" class="home-button">HOME</button>
+</div>
+
 </body>
 <footer>© 2025 Sian's | 所有文章均屬原創，請勿轉載!</footer>    
 </html>
