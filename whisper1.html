@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>心底話 - 靜靜說</title>
+  <title>心底話 Whisper</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     body {
@@ -11,6 +11,7 @@
       color: #555;
       padding: 30px;
       text-align: center;
+      animation: fadeIn 2s ease;
     }
     h1 {
       font-size: 2.5em;
@@ -20,21 +21,34 @@
       font-size: 1.5em;
       line-height: 1.6;
     }
-    a {
-      display: block;
+    a.back {
+      display: inline-block;
       margin-top: 30px;
       text-decoration: none;
       color: #888;
+      background: rgba(255,255,255,0.7);
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    a.back:hover {
+      background: #ffc0cb;
+      color: white;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>靜靜說</h1>
-  <p>有些話，只能對自己輕輕說。</p>
-  <p>世界太喧鬧，而我的心，仍然溫柔。</p>
+  <h1>靜靜說的小秘密</h1>
+  <p>有些話，只能在心底慢慢盛開。<br>  
+  也許不被誰聽見，但它們真實地存在著。</p>
 
-  <a href="secretgarden.html">返回秘密花園</a>
+  <a class="back" href="secretgarden.html">返回秘密花園</a>
 
 </body>
 </html>
