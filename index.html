@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>秘密花園 Secret Garden</title>
+  <title>秘密花園</title>
+
+  <!-- 手寫字體 -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      background-image: url('bg.jpg'); /* 你記得放番背景圖 */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
       font-family: 'Dancing Script', cursive;
       color: #555;
-      background: url('images/bg.jpg') center/cover fixed no-repeat;
+      margin: 0;
+      padding: 0;
       text-align: center;
       animation: bodyFadeIn 2s ease;
-    }
-
-    @keyframes bodyFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      overflow-x: hidden;
     }
 
     .intro {
@@ -30,23 +32,9 @@
       animation: fadeIn 2s ease-in;
     }
 
-    section {
-      margin: 50px auto;
-      padding: 20px;
-      max-width: 800px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 15px;
-      animation: fadeIn 2s ease-in;
-    }
-
     h1 {
       font-size: 3em;
       margin-bottom: 0.5em;
-    }
-
-    h2 {
-      font-size: 2em;
-      margin-bottom: 0.3em;
     }
 
     p {
@@ -54,21 +42,15 @@
       line-height: 1.6em;
     }
 
-    a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 12px;
-      font-size: 1.2em;
-      color: #555;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a:hover {
-      background: rgba(255, 182, 193, 0.8);
-      transform: scale(1.05);
+    section {
+      margin: 50px 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeIn 2s ease-in;
     }
 
     @keyframes fadeIn {
@@ -76,7 +58,12 @@
       to { opacity: 1; }
     }
 
-    /* 飄落花瓣效果 */
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 花瓣樣式 */
     .petal {
       position: fixed;
       top: -10px;
@@ -84,6 +71,8 @@
       animation-name: fall;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
+      pointer-events: none;
+      z-index: 9999;
     }
 
     @keyframes fall {
@@ -97,35 +86,41 @@
 <body>
 
   <div class="intro">
-    <h1>秘密花園 Secret Garden</h1>
-    <p>這裡，是我靜靜灌潤心靈的角落。<br>  
+    <h1>秘密花園</h1>
+    <p>這裡，是我靜靜灌潤心靈的角落。<br>
     如果你聽見微風裡的心跳聲，那，就是我的聲音。</p>
   </div>
 
   <section>
     <h2>心底話 Whisper</h2>
-    <p>我有些話，不太敢大聲說出來。<br>
-      只會在這個小小花園，簡簡單單說給自己聽。</p>
-    <a href="whisper/index.html">➤ 進入心底話</a>
+    <p>今天的天空，好像也懂得我的小小憂傷，輕輕地下著細雨。</p>
+    <p>我對自己說：「沒關係，慢慢來，已經很好了。」</p>
   </section>
 
   <section>
     <h2>靈感花瓣 Petals</h2>
-    <p>有時，一個小小的思念，會潤成一瓣美麗的花瓣。<br>
-      在此給自己留下一片輕輕的香氣。</p>
-    <a href="petals/index.html">➤ 進入靈感花瓣</a>
+    <p>一個微小的思念，也能綻放成一片香氣。</p>
+    <p>這裡，每一片文字，都是我親手灌溉的花瓣。</p>
+  </section>
+
+  <section>
+    <h2>秘密小徑 Paths</h2>
+    <p>有些故事，太輕太柔，不適合在喧鬧中講述。</p>
+    <p>只有在這條秘密小徑上，才能悄悄告訴真正懂的人。</p>
   </section>
 
   <!-- 花瓣飄落效果 -->
   <script>
     const numberOfPetals = 30;
+
     for (let i = 0; i < numberOfPetals; i++) {
-      const petal = document.createElement('div');
+      let petal = document.createElement('div');
       petal.className = 'petal';
       petal.style.left = Math.random() * 100 + 'vw';
       petal.style.animationDuration = (5 + Math.random() * 5) + 's';
       petal.style.opacity = Math.random();
       petal.style.fontSize = (10 + Math.random() * 20) + 'px';
+      petal.innerHTML = '❀'; // 用小花圖示
       document.body.appendChild(petal);
     }
   </script>
