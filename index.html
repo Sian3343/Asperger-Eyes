@@ -204,6 +204,17 @@
   background-color: #e0e0e0;
 }
 
+.scroll-buttons {
+  position: fixed;
+  top: 50%;
+  right: 20px; /* 離右邊20px，可以調 */
+  transform: translateY(-50%); /* 讓它垂直置中 */
+  display: flex;
+  flex-direction: column; /* 按鈕垂直排 */
+  gap: 10px; /* 按鈕之間有距離 */
+  z-index: 999; /* 保證在最上層 */
+}
+    
 .home-button {
   font-size: 12px; /* 專門縮小 HOME 按鈕的字體 */
 }
