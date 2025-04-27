@@ -8,6 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 
   <style>
+
+    /* Logo區 */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 60px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 80px;
+      object-fit: contain;
+    }
+    
     body {
       background-image: url('bg.jpg');
       background-size: cover;
@@ -97,6 +115,12 @@
 
 <body>
 
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="slogo.png" alt="Sian Logo" class="logo">
+  </div>
+  
   <div class="intro">
     <h1>秘密小徑 Paths</h1>
     <p>每條小徑，都藏著一個小小的秘密故事。<br>在微風與光影之中，等你來發現。</p>
