@@ -9,6 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
+
+
+    /* Logo區 */
+    .logo-container {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 6px 60px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      height: 80px;
+      object-fit: contain;
+    }
+
+    
     body {
       background-image: url('../bg.jpg');
       background-size: cover;
@@ -93,6 +113,12 @@
 
 <body>
 
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="slogo.png" alt="Sian Logo" class="logo">
+  </div>
+
+  
   <div class="intro">
     <h1>靈感花瓣 Petals</h1>
     <p>一片片小小的感受，<br>在心田裡，輕輕綻放。</p>
