@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心底話 Whisper</title>
+
+  <!-- 字型 -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url('../bg.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Dancing Script', cursive;
+      color: #555;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      animation: bodyFadeIn 2s ease;
+    }
+
+    .intro {
+      margin-top: 15vh;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 30px 50px;
+      border-radius: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6em;
+    }
+
+    .whisper-entry {
+      margin: 40px 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 15px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      font-size: 1.2em;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes bodyFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* 浮動按鈕 */
+    .floating-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .floating-buttons button {
+      background: #f8cdd3;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .floating-buttons button:hover {
+      background: #f5b6bd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="intro">
+    <h1>心底話 Whisper</h1>
+    <p>這裡是內心柔軟的地方，<br>只說給懂得傾聽的人。</p>
+  </div>
+
+  <div class="whisper-entry">
+    <h2>微風中的秘密</h2>
+    <p>有些話，不是刻意藏起來，<br>
+    只是需要一個安靜的角落，<br>
+    慢慢長成自己想要的樣子。</p>
+  </div>
+
+  <div class="whisper-entry">
+    <h2>月光下的小聲音</h2>
+    <p>在別人看不見的夜晚，<br>
+    我輕輕對自己說：<br>
+    「沒關係，你已經很努力了。」</p>
+  </div>
+
+  <div class="whisper-entry">
+    <h2>心裡的小小燈塔</h2>
+    <p>即使偶爾迷路，<br>
+    心底那盞溫柔的光，<br>
+    仍然一直，一直為我亮著。</p>
+  </div>
+
+  <!-- 浮動按鈕 -->
+  <div class="floating-buttons">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">往上</button>
+    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">往下</button>
+    <button onclick="location.href='../index.html';">回首頁</button>
+  </div>
+
+</body>
+</html>
