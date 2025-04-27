@@ -115,14 +115,19 @@
     .logo-container {
   position: absolute;
   top: 20px;
-  left: 20px;
-  z-index: 1000;
+  left: 50%;
+  transform: translateX(-50%); /* 把 logo 向左移動，使其居中 */
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.6); /* 透明白色背景 */
+  border-radius: 50px; /* 讓背景有橢圓形效果 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 增加柔和的陰影 */
 }
 
 .logo {
-  height: 80px; /* 可根據需要調整大小 */
-  object-fit: contain;
+  height: 80px; /* 調整大小 */
+  object-fit: contain; /* 讓圖片不失真 */
 }
+
     
   </style>
 </head>
