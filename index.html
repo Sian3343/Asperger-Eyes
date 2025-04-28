@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
-    /* 整體設定 */
     body {
       background-image: url('bg.jpg');
       background-size: cover;
@@ -24,72 +23,66 @@
       overflow-x: hidden;
     }
 
-    /* Logo區 */
+    /* logo容器 */
     .logo-container {
-      position: relative;
-      margin: 20px auto 0 auto;
-      padding: 10px 60px;
+      margin: 20px auto 10px;
       background: rgba(255, 255, 255, 0.6);
       border-radius: 50px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 10px 40px;
       width: fit-content;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-
     .logo {
       height: 80px;
-      object-fit: contain;
     }
 
-    /* 入口文字 */
+    /* 介紹 */
     .intro {
-      margin: 50px auto 30px auto;
-      background: rgba(255, 255, 255, 0.7);
-      display: inline-block;
+      margin: 30px auto;
       padding: 30px 40px;
+      background: rgba(255, 255, 255, 0.7);
       border-radius: 20px;
-      animation: fadeIn 2s ease-in;
+      display: inline-block;
       max-width: 90%;
+      animation: fadeIn 2s ease-in;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 0.5em;
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1.3em;
       line-height: 1.6em;
     }
 
-    /* 各區塊設定 */
+    /* section */
     section {
-      margin: 50px auto;
-      padding: 20px;
       background: rgba(255, 255, 255, 0.5);
+      margin: 40px auto;
+      padding: 20px;
       border-radius: 15px;
-      max-width: 1000px;
+      max-width: 900px;
       animation: fadeIn 2s ease-in;
     }
 
-    /* 飄落花瓣 */
+    /* 花瓣效果 */
     .petal {
       position: fixed;
       top: -10px;
       color: pink;
-      animation-name: fall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      animation: fall linear infinite;
       pointer-events: none;
       z-index: 9999;
     }
-
     @keyframes fall {
       to {
         transform: translateY(100vh) rotate(360deg);
       }
     }
 
-    /* 上下&首頁按鈕 */
+    /* 上下按鈕 */
     .scroll-buttons {
       position: fixed;
       top: 50%;
@@ -100,7 +93,6 @@
       gap: 10px;
       z-index: 999;
     }
-
     .scroll-buttons button {
       background: rgba(255, 192, 203, 0.7);
       border: none;
@@ -111,27 +103,23 @@
       transition: background-color 0.3s;
       color: #555;
     }
-
     .scroll-buttons button:hover {
       background: rgba(255, 105, 180, 0.8);
     }
-
     .home-button {
       font-size: 12px;
     }
 
-    /* 淡入動畫 */
+    /* 淡入效果 */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     @keyframes bodyFadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    /* 頁腳 */
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -185,7 +173,7 @@
     <p><a href="petals/index.html">➤ 進入靈感花瓣</a></p>
   </section>
 
-  <!-- 飄落花瓣效果 -->
+  <!-- 花瓣效果 -->
   <script>
     const numberOfPetals = 30;
     for (let i = 0; i < numberOfPetals; i++) {
@@ -200,7 +188,7 @@
     }
   </script>
 
-  <!-- 上下 & 回首頁按鈕 -->
+  <!-- 上下按鈕 -->
   <div class="scroll-buttons">
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
     <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});">↓</button>
