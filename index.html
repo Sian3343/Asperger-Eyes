@@ -26,14 +26,13 @@
 
     /* Logo區 */
     .logo-container {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      margin: 20px auto 0 auto;
       padding: 10px 60px;
       background: rgba(255, 255, 255, 0.6);
       border-radius: 50px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: fit-content;
     }
 
     .logo {
@@ -43,12 +42,13 @@
 
     /* 入口文字 */
     .intro {
-      margin-top: 25vh;
+      margin: 50px auto 30px auto;
       background: rgba(255, 255, 255, 0.7);
       display: inline-block;
       padding: 30px 40px;
       border-radius: 20px;
       animation: fadeIn 2s ease-in;
+      max-width: 90%;
     }
 
     h1 {
@@ -63,13 +63,11 @@
 
     /* 各區塊設定 */
     section {
-      margin: 50px 20px;
+      margin: 50px auto;
       padding: 20px;
       background: rgba(255, 255, 255, 0.5);
       border-radius: 15px;
-      max-width: 1200px; /* 改大左喇 */
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 1000px;
       animation: fadeIn 2s ease-in;
     }
 
@@ -119,7 +117,7 @@
     }
 
     .home-button {
-      font-size: 12px; /* 專門縮小 HOME 按鈕字體 */
+      font-size: 12px;
     }
 
     /* 淡入動畫 */
@@ -140,14 +138,13 @@
       font-size: 14px;
       color: #aaa;
     }
-  </style>
 
-  <style>
     img {
       max-width: 100%;
       height: auto;
     }
   </style>
+
 </head>
 
 <body>
@@ -188,7 +185,7 @@
     <p><a href="petals/index.html">➤ 進入靈感花瓣</a></p>
   </section>
 
-  <!-- 花瓣飄落效果 -->
+  <!-- 飄落花瓣效果 -->
   <script>
     const numberOfPetals = 30;
     for (let i = 0; i < numberOfPetals; i++) {
